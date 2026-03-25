@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   client.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: salzghou <salzghou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/25 13:48:33 by salzghou          #+#    #+#             */
+/*   Updated: 2026/03/25 15:04:07 by salzghou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include <unistd.h>
 #include <signal.h>
 #include <stdlib.h>
@@ -28,7 +41,7 @@ int main(int argc, char **argv)
                 kill(server_pid, SIGUSR2);
             else
                 kill(server_pid, SIGUSR1);
-            usleep(100);    
+            usleep(1000);
             bit++;
         }
         i++;
@@ -37,7 +50,7 @@ int main(int argc, char **argv)
     while (bit < 8)
     {
         kill(server_pid, SIGUSR1);
-        usleep(100);        
+        usleep(500);
         bit++;
     }
     return (0);
