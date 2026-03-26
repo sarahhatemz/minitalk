@@ -6,14 +6,10 @@
 /*   By: salzghou <salzghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 13:54:22 by salzghou          #+#    #+#             */
-/*   Updated: 2026/03/25 14:29:52 by salzghou         ###   ########.fr       */
+/*   Updated: 2026/03/26 13:57:26 by salzghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <unistd.h>
-#include <signal.h>
-#include <stdlib.h>
 #include "minitalk.h"
 
 void    handler(int sig)

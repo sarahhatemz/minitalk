@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salzghou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: salzghou <salzghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 19:01:50 by salzghou          #+#    #+#             */
-/*   Updated: 2025/08/09 12:57:47 by falhaimo         ###   ########.fr       */
+/*   Updated: 2026/03/26 14:09:04 by salzghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "minitalk.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -39,9 +38,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (sum * sign);
 }
-/*
-int	main(void) {
-	char *n = "-++-6764safd";
-	printf("%d\n", ft_atoi(n));
-	return (0);
-}*/

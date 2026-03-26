@@ -6,14 +6,10 @@
 /*   By: salzghou <salzghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 13:48:33 by salzghou          #+#    #+#             */
-/*   Updated: 2026/03/25 15:04:07 by salzghou         ###   ########.fr       */
+/*   Updated: 2026/03/26 14:17:21 by salzghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <unistd.h>
-#include <signal.h>
-#include <stdlib.h>
 #include "minitalk.h"
 int main(int argc, char **argv)
 {
@@ -24,7 +20,7 @@ int main(int argc, char **argv)
         return (1);
     }
     
-    int server_pid = atoi(argv[1]);
+    int server_pid = ft_atoi(argv[1]);
     int i = 0;
 
     if (kill(server_pid, 0) == -1)
@@ -41,7 +37,7 @@ int main(int argc, char **argv)
                 kill(server_pid, SIGUSR2);
             else
                 kill(server_pid, SIGUSR1);
-            usleep(1000);
+            usleep(600);
             bit++;
         }
         i++;
@@ -50,7 +46,7 @@ int main(int argc, char **argv)
     while (bit < 8)
     {
         kill(server_pid, SIGUSR1);
-        usleep(500);
+        usleep(300);
         bit++;
     }
     return (0);

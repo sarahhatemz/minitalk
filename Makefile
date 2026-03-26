@@ -1,25 +1,28 @@
-CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CC      = cc
+CFLAGS  = -Wall -Werror -Wextra
 
-SERVER_SRCS = server.c
-CLIENT_SRCS = client.c
+NAME_SERVER = server
+NAME_CLIENT = client
 
-SERVER_OBJ = $(SERVER_SRCS:.c=.o)
-CLIENT_OBJ = $(CLIENT_SRCS:.c=.o)
+SRC_SERVER= server.c ft_atoi.c 
+SRC_CLIENT= client.c ft_atoi.c
 
-all: server client
+OBJ_SERVER = $(SRC_SERVER:.c=.o)
+OBJ_CLIENT = $(SRC_CLIENT:.c=.o)
 
-server: $(SERVER_OBJ)
-	$(CC) $(CFLAGS) $(SERVER_OBJ) -o server
 
-client: $(CLIENT_OBJ)
-	$(CC) $(CFLAGS) $(CLIENT_OBJ) -o client
+all: $(NAME_SERVER) $(NAME_CLIENT)
+
+$(NAME_SERVER): $(OBJ_SERVER)
+	$(CC) $(CFLAGS) $(OBJ_SERVER) -o $(NAME_SERVER)
+$(NAME_CLIENT): $(OBJ_CLIENT)
+	$(CC) $(CFLAGS) $(OBJ_CLIENT) -o $(NAME_CLIENT)
 
 clean:
-	rm -rf $(SERVER_OBJ) $(CLIENT_OBJ)
+	rm -f $(OBJ_CLIENT) $(OBJ_SERVER)
 
 fclean: clean
-	rm -rf server client
+	rm -f $(NAME_CLIENT) $(NAME_SERVER)
 
 re: fclean all
 
